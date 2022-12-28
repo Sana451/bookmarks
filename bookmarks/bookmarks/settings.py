@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-9gkh0h^ls@n!$4z+6jtnhq&nm%xovenhlhx8goknttjli82-r@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,20 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.vk.VKOAuth2',
+    'account.authentication.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_GITHUB_KEY = '68fdf3f994a638d1c81d'
+SOCIAL_AUTH_GITHUB_SECRET = '6f174121949081cf821536ee88969dfddf2403e0'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '247640940803-ishsdqijbih3l5fa9due9gvjoavqul71.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '51513376'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'e4EARn4u9eQzDsndksD0'
