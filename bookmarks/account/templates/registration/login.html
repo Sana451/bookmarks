@@ -23,4 +23,32 @@
         <a href="{% url 'password_reset' %}">Не помните пароль?</a>
     </p>
 </div>
+<div class="social">
+    <ul>
+        <li class="vk">
+            <a href="{% url "social:begin" "vk-oauth2" %}">
+            Войти с помощью учётной записи VK
+            </a>
+        </li>
+        <li class="github">
+            <a href="{% url "social:begin" "github" %}">
+            Войти с помощью учётной записи Github
+            </a>
+        </li>
+        <li class="google">
+            <a href="{% url "social:begin" "google-oauth2" %}">
+            Войти с помощью учётной записи Google
+            </a>
+        <li class="facebook">
+            <a href="{% url "social:begin" "facebook" %}">
+                Войти с помощью учётной записи Facebook
+            </a>
+        </li>
+        <li class="twitter">
+            <a href="{% url "social:begin" "twitter" %}">
+                Войти с помощью учётной записи Twitter
+            </a>
+        </li>
+    </ul>
+</div>
 {% endblock %}

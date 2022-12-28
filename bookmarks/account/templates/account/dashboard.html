@@ -2,5 +2,6 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
 <h1>Рабочий стол</h1>
-<p>Добро пожаловать на ваш рабочий стол.</p>
+<p>Добро пожаловать на ваш рабочий стол. <a href="{% url 'edit' %}">Редактировать профиль</a> или <a
+        href="{% url 'password_change' %}">сменить пароль</a></p>
 {% endblock %}
