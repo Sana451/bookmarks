@@ -2,6 +2,15 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
 <h1>Рабочий стол</h1>
-<p>Добро пожаловать на ваш рабочий стол. <a href="{% url 'edit' %}">Редактировать профиль</a> или <a
+
+{% with total_images_created=request.user.images_created.count %}
+<p>Добро пожаловать на ваш рабочий стол. Вы добавили в закладки {{ total_images_created}} картинок
+    {{ total_images_created|pluralize }}.</p>
+{% endwith %}
+
+<p>Перетащите кнопку на панель закладок вашего браузера, чтобы добавлять картинки с других сайтов →
+    <a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">Добавить картинку</a></p>
+
+<p>Также вы можете. <a href="{% url 'edit' %}">редактировать профиль</a> или <a
         href="{% url 'password_change' %}">сменить пароль</a></p>
 {% endblock %}
